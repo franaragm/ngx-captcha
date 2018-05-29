@@ -657,15 +657,15 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         /**
         * Name of the global callback
         */
-        this.windowOnLoadCallbackProperty = 'ngx_onload_callback' + this.getPseudoUniqueNumber();
+        this.windowOnLoadCallbackProperty = 'ngx_onload_callback_' + this.getPseudoUniqueNumber();
         /**
          * Name of the global reCaptcha property
          */
         this.globalReCaptchaProperty = 'grecaptcha';
         /**
-         * Id of the captcha
+         * Prefix of the captcha element
          */
-        this.captchaId = 'ngx_captcha_id' + this.getPseudoUniqueNumber();
+        this.captchaElemPrefix = 'ngx_captcha_id_';
         /**
          * Type
          */
@@ -697,8 +697,6 @@ var BaseReCaptchaComponent = /** @class */ (function () {
          */
         this.isLoaded = false;
     }
-    BaseReCaptchaComponent.prototype.ngOnInit = function () {
-    };
     BaseReCaptchaComponent.prototype.getGlobalSiteKey = function () {
         if (this.globalConfig) {
             // Invisible captcha
@@ -792,7 +790,7 @@ var BaseReCaptchaComponent = /** @class */ (function () {
      * Responsible for instantiating captcha element
     */
     BaseReCaptchaComponent.prototype.renderReCaptcha = function () {
-        this.reCaptchaApi.render(this.captchaId, this.getCaptchaProperties());
+        this.captchaId = this.reCaptchaApi.render(this.captchaElemId, this.getCaptchaProperties());
         this.ready.next();
     };
     /**
@@ -880,20 +878,22 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         }
     };
     BaseReCaptchaComponent.prototype.generateNewElemId = function () {
-        return "ngx-captcha-id-" + this.getPseudoUniqueNumber();
+        return this.captchaElemPrefix + this.getPseudoUniqueNumber();
     };
     BaseReCaptchaComponent.prototype.createAndSetCaptchaElem = function () {
-        if (!this.captchaId) {
+        // generate new captcha id
+        this.captchaElemId = this.generateNewElemId();
+        if (!this.captchaElemId) {
             throw Error("Captcha elem Id is not set");
         }
         // remove old html
         this.captchaWrapperElem.nativeElement.innerHTML = '';
         // create new wrapper for captcha
         var newElem = this.renderer.createElement('div');
-        newElem.id = this.captchaId;
+        newElem.id = this.captchaElemId;
         this.renderer.appendChild(this.captchaWrapperElem.nativeElement, newElem);
         // update captcha elem
-        this.ensureCaptchaElem(this.captchaId);
+        this.ensureCaptchaElem(this.captchaElemId);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -1003,7 +1003,7 @@ var InvisibleReCaptchaComponent = /** @class */ (function (_super) {
      */
     InvisibleReCaptchaComponent.prototype.execute = function () {
         // execute captcha
-        this.reCaptchaApi.execute(this.captchaId);
+        this.reCaptchaApi.execute(this.captchaElemPrefix);
     };
     InvisibleReCaptchaComponent.prototype.captchaSpecificSetup = function () {
     };
