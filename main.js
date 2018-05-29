@@ -49,7 +49,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_0__["platformB
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\r\n        <a class=\"navbar-brand\" routerLink=\"/installation\">Captcha for Angular 6+</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n            aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link \" routerLink=\"/installation\">Installation</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link \" routerLink=\"/recaptcha2\">reCAPTCHA2</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link \" routerLink=\"/invisible\">Invisible reCAPTCHA</a>\r\n                </li>\r\n            </ul>\r\n            <div class=\"mt-2 mt-md-0\">\r\n                <a href=\"https://github.com/Enngage/ngx-captcha\">\r\n                    <button class=\"btn my-2 my-sm-0\" type=\"submit\">GitHub</button>\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>\r\n\r\n<main role=\"main\" style=\"margin-top: 90px\">\r\n    <div class=\"container\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</main>"
+module.exports = "<header>\r\n    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\r\n        <a class=\"navbar-brand\" routerLink=\"/installation\">Captcha for Angular 6+</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n            aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link \" routerLink=\"/installation\">Installation</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link \" routerLink=\"/recaptcha2\">reCAPTCHA2</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link \" routerLink=\"/invisible\">Invisible reCAPTCHA</a>\r\n                </li>\r\n            </ul>\r\n            <div class=\"mt-2 mt-md-0\">\r\n                <a href=\"https://github.com/Enngage/ngx-captcha\">\r\n                    <button class=\"btn my-2 my-sm-0\" type=\"submit\">GitHub</button>\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>\r\n\r\n<main role=\"main\" style=\"margin-top: 90px\">\r\n    <div class=\"container\" id=\"highlight\">\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n</main>"
 
 /***/ }),
 
@@ -219,7 +219,7 @@ var DemoRoutes = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Installation</h2>\r\n\r\n\r\n<h5 class=\"mt-4\">npm</h5>\r\n\r\n<pre class=\"prettyprint mt-2\" [innerText]=\"installCode\"></pre>\r\n\r\n<h5 class=\"mt-4\">Import\r\n    <strong>NgxCaptchaModule</strong> to your app and configure Google keys\r\n</h5>\r\n\r\n<pre class=\"prettyprint mt-2\" [innerText]=\"importModuleCode\"></pre>\r\n\r\n<h5 class=\"mt-4\">Use</h5>\r\n<pre class=\"prettyprint mt-2\" [innerText]=\"exampleCode\"></pre>"
+module.exports = "\r\n<h2>Installation</h2>\r\n\r\n\r\n<h5 class=\"mt-4\">npm</h5>\r\n\r\n<pre class=\"mt-2\">\r\n    <code [innerText]=\"installCode\"></code>\r\n</pre>\r\n\r\n<h5 class=\"mt-4\">Import\r\n    <strong>NgxCaptchaModule</strong> to your app and configure Google keys\r\n</h5>\r\n\r\n<pre class=\"mt-2\">\r\n    <code [innerText]=\"importModuleCode\"></code>\r\n</pre>\r\n\r\n<h5 class=\"mt-4\">Use</h5>\r\n\r\n<pre class=\"mt-2\">\r\n    <code [innerText]=\"exampleCode\"></code>\r\n</pre>\r\n"
 
 /***/ }),
 
@@ -244,15 +244,17 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var InstallationComponent = /** @class */ (function () {
     function InstallationComponent() {
         this.installCode = "npm install ngx-captcha";
-        this.importModuleCode = "\nimport { NgModule } from '@angular/core';\nimport { NgxCaptchaModule } from 'ngx-captcha';\n\n@NgModule({\n  imports: [\n    NgxCaptchaModule.forRoot({\n      reCaptcha2SiteKey: 'xxxx',\n      invisibleCaptchaSiteKey: 'yyy'\n    }),\n  })\n\nexport class AppModule { }\n\n";
-        this.exampleCode = "\n<ngx-invisible-recaptcha\n  [type]=\"type\"\n  [badge]=\"badge\"\n  (load)=\"handleLoad()\"\n  (success)=\"handleSuccess($event)\">\n</ngx-invisible-recaptcha>\n\n";
+        this.importModuleCode = "import { NgModule } from '@angular/core';\nimport { NgxCaptchaModule } from 'ngx-captcha';\n\n@NgModule({\n  imports: [\n    NgxCaptchaModule.forRoot({\n      reCaptcha2SiteKey: 'xxxx',\n      invisibleCaptchaSiteKey: 'yyy'\n    }),\n  })\n\nexport class AppModule { }\n\n";
+        this.exampleCode = "<ngx-invisible-recaptcha\n  [type]=\"type\"\n  [badge]=\"badge\"\n  (load)=\"handleLoad()\"\n  (success)=\"handleSuccess($event)\">\n</ngx-invisible-recaptcha>\n\n";
     }
-    InstallationComponent.prototype.ngAfterViewChecked = function () {
-        this.prettify();
+    InstallationComponent.prototype.ngAfterViewInit = function () {
+        this.highlight();
     };
-    InstallationComponent.prototype.prettify = function () {
-        if (window['PR']) {
-            PR.prettyPrint();
+    InstallationComponent.prototype.highlight = function () {
+        var highlightBlocks = document.getElementsByTagName('code');
+        for (var i = 0; i < highlightBlocks.length; i++) {
+            var block = highlightBlocks[i];
+            hljs.highlightBlock(block);
         }
     };
     InstallationComponent = __decorate([
@@ -274,7 +276,7 @@ var InstallationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row featurette\">\r\n    <div class=\"col-md-7\">\r\n        <h2 class=\"featurette-heading\">Invisible reCAPTCHA\r\n        </h2>\r\n\r\n        <p class=\"mt-4\">\r\n            This is a completely dynamic implementation - try changing properties to immediately see changes in rendered captcha.\r\n        </p>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Property</th>\r\n                    <th>Values</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>Badge</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeBadge('bottomright')\">Bottomright</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeBadge('bottomleft')\">Bottomleft</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeBadge('inline')\">Inline</span>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Type</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('image')\">Image</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('audio')\">Audio</span>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Method</th>\r\n                    <th>Description</th>\r\n                    <th>Action</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>execute</td>\r\n                    <td>Verifies captcha on the backround and returns captcha response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"execute()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getCurrentResponse</td>\r\n                    <td>Gets the latest submitted response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCurrentResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getResponse</td>\r\n                    <td>Gets captcha response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reset</td>\r\n                    <td>Resets captcha (does not reload script)</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reset()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reload</td>\r\n                    <td>Unsets global script & reloads captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reload()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getCaptchaId</td>\r\n                    <td>Gets Id of captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCaptchaId()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class=\"col-md-5\">\r\n        <h4>Live example</h4>\r\n        <ngx-invisible-recaptcha #captchaElem (ready)=\"handleReady()\" (load)=\"handleLoad()\" (success)=\"handleSuccess($event)\" [type]=\"type\" [badge]=\"badge\">\r\n        </ngx-invisible-recaptcha>\r\n\r\n        <h4 class=\"mt-3\">Status</h4>\r\n        <div>\r\n            <ul class=\"alt\">\r\n                <li>\r\n                    <span>Loaded: </span>\r\n                    <i *ngIf=\"!captchaIsLoaded\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsLoaded\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha ready: </span>\r\n                    <i *ngIf=\"!captchaIsReady\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsReady\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha success: </span>\r\n                    <i *ngIf=\"!captchaSuccess\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaSuccess\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <h4 class=\"mt-3\">Code</h4>\r\n        <pre class=\"prettyprint\" [innerText]=\"exampleCode\"></pre>\r\n    </div>\r\n</div>"
+module.exports = "\r\n<div class=\"row featurette\">\r\n    <div class=\"col-md-7\">\r\n        <h2 class=\"featurette-heading\">Invisible reCAPTCHA\r\n        </h2>\r\n\r\n        <p class=\"mt-4\">\r\n            This is a completely dynamic implementation - try changing properties to immediately see changes in rendered captcha.\r\n        </p>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Property</th>\r\n                    <th>Values</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>Badge</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeBadge('bottomright')\">Bottomright</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeBadge('bottomleft')\">Bottomleft</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeBadge('inline')\">Inline</span>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Type</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('image')\">Image</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('audio')\">Audio</span>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Method</th>\r\n                    <th>Description</th>\r\n                    <th>Action</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>execute</td>\r\n                    <td>Verifies captcha on the backround and returns captcha response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"execute()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getCurrentResponse</td>\r\n                    <td>Gets the latest submitted response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCurrentResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getResponse</td>\r\n                    <td>Gets captcha response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reset</td>\r\n                    <td>Resets captcha (does not reload script)</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reset()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reload</td>\r\n                    <td>Unsets global script & reloads captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reload()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getCaptchaId</td>\r\n                    <td>Gets Id of captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCaptchaId()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class=\"col-md-5\">\r\n        <h4>Live example</h4>\r\n        <ngx-invisible-recaptcha #captchaElem (ready)=\"handleReady()\" (load)=\"handleLoad()\" (success)=\"handleSuccess($event)\" [type]=\"type\" [badge]=\"badge\">\r\n        </ngx-invisible-recaptcha>\r\n\r\n        <h4 class=\"mt-3\">Status</h4>\r\n        <div>\r\n            <ul class=\"alt\">\r\n                <li>\r\n                    <span>Loaded: </span>\r\n                    <i *ngIf=\"!captchaIsLoaded\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsLoaded\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha ready: </span>\r\n                    <i *ngIf=\"!captchaIsReady\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsReady\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha success: </span>\r\n                    <i *ngIf=\"!captchaSuccess\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaSuccess\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <h4 class=\"mt-3\">Code</h4>\r\n\r\n        <pre class=\"mt-2\">\r\n            <code [innerText]=\"exampleCode\"></code>\r\n        </pre>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -304,18 +306,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var InvisibleReCaptchaDemoComponent = /** @class */ (function () {
     function InvisibleReCaptchaDemoComponent(cdr) {
         this.cdr = cdr;
-        this.exampleCode = "\n<ngx-invisible-recaptcha #captchaElem\n  [type]=\"type\"\n  [badge]=\"badge\"\n  (load)=\"handleLoad()\"\n  (success)=\"handleSuccess($event)\">\n</ngx-invisible-recaptcha>\n";
+        this.exampleCode = "<ngx-invisible-recaptcha #captchaElem\n  [type]=\"type\"\n  [badge]=\"badge\"\n  (load)=\"handleLoad()\"\n  (success)=\"handleSuccess($event)\">\n</ngx-invisible-recaptcha>\n";
         this.captchaIsLoaded = false;
         this.captchaSuccess = false;
         this.captchaIsReady = false;
         this.badge = 'inline';
     }
-    InvisibleReCaptchaDemoComponent.prototype.ngAfterViewChecked = function () {
-        this.prettify();
-    };
     InvisibleReCaptchaDemoComponent.prototype.ngAfterViewInit = function () {
         this.captchaIsLoaded = true;
         this.cdr.detectChanges();
+        this.highlight();
     };
     InvisibleReCaptchaDemoComponent.prototype.execute = function () {
         this.captchaElem.execute();
@@ -359,11 +359,19 @@ var InvisibleReCaptchaDemoComponent = /** @class */ (function () {
         this.captchaElem.resetCaptcha();
     };
     InvisibleReCaptchaDemoComponent.prototype.getCurrentResponse = function () {
-        alert(this.captchaElem.getCurrentResponse());
+        var currentResponse = this.captchaElem.getCurrentResponse();
+        if (!currentResponse) {
+            alert('There is no current response - have you submitted captcha?');
+        }
+        else {
+            alert(currentResponse);
+        }
     };
-    InvisibleReCaptchaDemoComponent.prototype.prettify = function () {
-        if (window['PR']) {
-            PR.prettyPrint();
+    InvisibleReCaptchaDemoComponent.prototype.highlight = function () {
+        var highlightBlocks = document.getElementsByTagName('code');
+        for (var i = 0; i < highlightBlocks.length; i++) {
+            var block = highlightBlocks[i];
+            hljs.highlightBlock(block);
         }
     };
     __decorate([
@@ -395,7 +403,7 @@ var InvisibleReCaptchaDemoComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row featurette\">\r\n    <div class=\"col-md-7\">\r\n        <h2 class=\"featurette-heading\">Google reCAPTCHA2\r\n        </h2>\r\n\r\n        <p class=\"mt-4\">\r\n            This is a completely dynamic implementation - try changing properties to immediately see changes in rendered captcha.\r\n        </p>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Property</th>\r\n                    <th>Values</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>Theme</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeTheme('light')\">Light</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeTheme('dark')\">Dark</span>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Language</td>\r\n                    <td>\r\n                        <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Culture code (i.e. 'en', 'es')\" #langInput [value]=\"lang\">\r\n                            <div class=\"input-group-append\">\r\n                                <button class=\"btn btn-info\" (click)=\"setLanguage()\">Set</button>\r\n                            </div>\r\n                        </div>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Size</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeSize('compact')\">Compact</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeSize('normal')\">Normal</span>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Type</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('image')\">Image</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('audio')\">Audio</span>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Method</th>\r\n                    <th>Description</th>\r\n                    <th>Action</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>getCurrentResponse</td>\r\n                    <td>Gets the latest submitted response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCurrentResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getResponse</td>\r\n                    <td>Gets captcha response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reset</td>\r\n                    <td>Resets captcha (does not reload script)</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reset()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reload</td>\r\n                    <td>Unsets global script & reloads captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reload()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getCaptchaId</td>\r\n                    <td>Gets Id of captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCaptchaId()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class=\"col-md-5\">\r\n        <h4>Live example</h4>\r\n        <ngx-recaptcha2 #captchaElem (expire)=\"handleExpire()\" (load)=\"handleLoad()\" (success)=\"handleSuccess($event)\" [size]=\"size\"\r\n            [hl]=\"lang\" [theme]=\"theme\" [type]=\"type\"></ngx-recaptcha2>\r\n\r\n        <h4 class=\"mt-3\">Status</h4>\r\n        <div>\r\n            <ul class=\"alt\">\r\n                <li>\r\n                    <span>Loaded: </span>\r\n                    <i *ngIf=\"!captchaIsLoaded\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsLoaded\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha success: </span>\r\n                    <i *ngIf=\"!captchaSuccess\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaSuccess\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha expired: </span>\r\n                    <i *ngIf=\"!captchaIsExpired\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsExpired\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <h4 class=\"mt-3\">Code</h4>\r\n        <pre class=\"prettyprint\" [innerText]=\"exampleCode\"></pre>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row featurette\">\r\n    <div class=\"col-md-7\">\r\n        <h2 class=\"featurette-heading\">Google reCAPTCHA2\r\n        </h2>\r\n\r\n        <p class=\"mt-4\">\r\n            This is a completely dynamic implementation - try changing properties to immediately see changes in rendered captcha.\r\n        </p>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Property</th>\r\n                    <th>Values</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>Theme</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeTheme('light')\">Light</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeTheme('dark')\">Dark</span>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Language</td>\r\n                    <td>\r\n                        <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" placeholder=\"Culture code (i.e. 'en', 'es')\" #langInput [value]=\"lang\">\r\n                            <div class=\"input-group-append\">\r\n                                <button class=\"btn btn-info\" (click)=\"setLanguage()\">Set</button>\r\n                            </div>\r\n                        </div>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Size</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeSize('compact')\">Compact</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeSize('normal')\">Normal</span>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>Type</td>\r\n                    <td>\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('image')\">Image</span> |\r\n                        <span style=\"cursor:pointer\" class=\"text-primary\" (click)=\"changeType('audio')\">Audio</span>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n\r\n        <table class=\"table mt-3\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Method</th>\r\n                    <th>Description</th>\r\n                    <th>Action</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr>\r\n                    <td>getCurrentResponse</td>\r\n                    <td>Gets the latest submitted response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCurrentResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getResponse</td>\r\n                    <td>Gets captcha response</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getResponse()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reset</td>\r\n                    <td>Resets captcha (does not reload script)</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reset()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>reload</td>\r\n                    <td>Unsets global script & reloads captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"reload()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n                <tr>\r\n                    <td>getCaptchaId</td>\r\n                    <td>Gets Id of captcha</td>\r\n                    <td>\r\n                        <button class=\"btn btn-info\" (click)=\"getCaptchaId()\">Try</button>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class=\"col-md-5\">\r\n        <h4>Live example</h4>\r\n        <ngx-recaptcha2 #captchaElem (expire)=\"handleExpire()\" (load)=\"handleLoad()\" (success)=\"handleSuccess($event)\" [size]=\"size\"\r\n            [hl]=\"lang\" [theme]=\"theme\" [type]=\"type\"></ngx-recaptcha2>\r\n\r\n        <h4 class=\"mt-3\">Status</h4>\r\n        <div>\r\n            <ul class=\"alt\">\r\n                <li>\r\n                    <span>Loaded: </span>\r\n                    <i *ngIf=\"!captchaIsLoaded\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsLoaded\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha success: </span>\r\n                    <i *ngIf=\"!captchaSuccess\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaSuccess\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n                <li>\r\n                    <span>Captcha expired: </span>\r\n                    <i *ngIf=\"!captchaIsExpired\" class=\"fas fa-times text-danger\"></i>\r\n                    <i *ngIf=\"captchaIsExpired\" class=\"fas fa-check text-success\"></i>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <h4 class=\"mt-3\">Code</h4>\r\n\r\n        <pre class=\"mt-2\">\r\n            <code [innerText]=\"exampleCode\"></code>\r\n        </pre>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -427,7 +435,7 @@ var ReCaptcha2DemoComponent = /** @class */ (function () {
         this.cdr = cdr;
         this.installCode = "\n  npm install ngx-captcha";
         this.importModuleCode = "\nimport { NgModule } from '@angular/core';\nimport { NgxCaptchaModule } from 'ngx-captcha';\n\n@NgModule({\n  imports: [\n    NgxCaptchaModule\n  })\n\n  export class AppModule { }";
-        this.exampleCode = "\n<ngx-recaptcha2 #captchaElem\n  [size]=\"size\"\n  [hl]=\"lang\"\n  [theme]=\"theme\"\n  [type]=\"type\"\n  (expire)=\"handleExpire()\"\n  (load)=\"handleLoad()\"\n  (success)=\"handleSuccess($event)\">\n</ngx-recaptcha2>";
+        this.exampleCode = "<ngx-recaptcha2 #captchaElem\n  [size]=\"size\"\n  [hl]=\"lang\"\n  [theme]=\"theme\"\n  [type]=\"type\"\n  (expire)=\"handleExpire()\"\n  (load)=\"handleLoad()\"\n  (success)=\"handleSuccess($event)\">\n</ngx-recaptcha2>";
         this.captchaIsLoaded = false;
         this.captchaSuccess = false;
         this.captchaIsExpired = false;
@@ -435,8 +443,8 @@ var ReCaptcha2DemoComponent = /** @class */ (function () {
         this.size = 'normal';
         this.lang = 'en';
     }
-    ReCaptcha2DemoComponent.prototype.ngAfterViewChecked = function () {
-        this.prettify();
+    ReCaptcha2DemoComponent.prototype.ngAfterViewInit = function () {
+        this.highlight();
     };
     ReCaptcha2DemoComponent.prototype.handleSuccess = function (captchaResponse) {
         this.captchaSuccess = true;
@@ -467,7 +475,13 @@ var ReCaptcha2DemoComponent = /** @class */ (function () {
         this.lang = this.langInput.nativeElement.value;
     };
     ReCaptcha2DemoComponent.prototype.getCurrentResponse = function () {
-        alert(this.captchaElem.getCurrentResponse());
+        var currentResponse = this.captchaElem.getCurrentResponse();
+        if (!currentResponse) {
+            alert('There is no current response - have you submitted captcha?');
+        }
+        else {
+            alert(currentResponse);
+        }
     };
     ReCaptcha2DemoComponent.prototype.getResponse = function () {
         var response = this.captchaElem.getResponse();
@@ -487,9 +501,11 @@ var ReCaptcha2DemoComponent = /** @class */ (function () {
     ReCaptcha2DemoComponent.prototype.reset = function () {
         this.captchaElem.resetCaptcha();
     };
-    ReCaptcha2DemoComponent.prototype.prettify = function () {
-        if (window['PR']) {
-            PR.prettyPrint();
+    ReCaptcha2DemoComponent.prototype.highlight = function () {
+        var highlightBlocks = document.getElementsByTagName('code');
+        for (var i = 0; i < highlightBlocks.length; i++) {
+            var block = highlightBlocks[i];
+            hljs.highlightBlock(block);
         }
     };
     __decorate([
@@ -632,23 +648,24 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var BaseReCaptchaComponent = /** @class */ (function () {
-    function BaseReCaptchaComponent(renderer, zone, recaptchaType, config) {
+    function BaseReCaptchaComponent(renderer, zone, recaptchaType, globalConfig) {
         this.renderer = renderer;
         this.zone = zone;
         this.recaptchaType = recaptchaType;
-        this.config = config;
+        this.globalConfig = globalConfig;
+        this.setupAfterLoad = false;
         /**
         * Name of the global callback
         */
-        this.windowOnLoadCallbackProperty = 'ngx_onload_callback';
+        this.windowOnLoadCallbackProperty = 'ngx_onload_callback' + this.getPseudoUniqueNumber();
         /**
          * Name of the global reCaptcha property
          */
         this.globalReCaptchaProperty = 'grecaptcha';
         /**
-         * Name of the global property holding captcha element
+         * Id of the captcha
          */
-        this.globalCaptchaElemName = 'ngx_onload_captcha_elem';
+        this.captchaId = 'ngx_captcha_id' + this.getPseudoUniqueNumber();
         /**
          * Type
          */
@@ -681,34 +698,56 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         this.isLoaded = false;
     }
     BaseReCaptchaComponent.prototype.ngOnInit = function () {
-        if (!this.config) {
-            throw Error("Config was not provided");
-        }
-        if (this.recaptchaType === _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_1__["ReCaptchaType"].InvisibleReCaptcha) {
-            if (!this.config.invisibleCaptchaSiteKey) {
-                throw Error("SiteKey for invisible reCaptcha is not set!");
+    };
+    BaseReCaptchaComponent.prototype.getGlobalSiteKey = function () {
+        if (this.globalConfig) {
+            // Invisible captcha
+            if (this.recaptchaType === _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_1__["ReCaptchaType"].InvisibleReCaptcha) {
+                if (!this.globalConfig.invisibleCaptchaSiteKey) {
+                    throw Error("SiteKey for invisible reCaptcha is not set!");
+                }
+                if (this.globalConfig.invisibleCaptchaSiteKey instanceof Function) {
+                    return this.globalConfig.invisibleCaptchaSiteKey();
+                }
+                else {
+                    return this.globalConfig.invisibleCaptchaSiteKey;
+                }
+                // recaptcha 2
             }
-            this.siteKey = this.config.invisibleCaptchaSiteKey;
-        }
-        else if (this.recaptchaType === _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_1__["ReCaptchaType"].ReCaptcha2) {
-            if (!this.config.reCaptcha2SiteKey) {
-                throw Error("SiteKey for reCaptcha2 is not set!");
+            else if (this.recaptchaType === _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_1__["ReCaptchaType"].ReCaptcha2) {
+                if (!this.globalConfig.reCaptcha2SiteKey) {
+                    throw Error("SiteKey for reCaptcha2 is not set!");
+                }
+                if (this.globalConfig.reCaptcha2SiteKey instanceof Function) {
+                    return this.globalConfig.reCaptcha2SiteKey();
+                }
+                else {
+                    return this.globalConfig.reCaptcha2SiteKey;
+                }
             }
-            this.siteKey = this.config.reCaptcha2SiteKey;
+            else {
+                throw Error("Unsupported captcha type '" + this.recaptchaType + "'!");
+            }
+        }
+    };
+    BaseReCaptchaComponent.prototype.ngOnChanges = function (changes) {
+        if (!this.siteKey) {
+            // use global site key if key is not available
+            this._siteKey = this.getGlobalSiteKey();
         }
         else {
-            throw Error("Unsupported captcha type '" + this.recaptchaType + "'!");
+            // use comnponent site key
+            if (this.siteKey instanceof Function) {
+                this._siteKey = this.siteKey();
+            }
+            else {
+                this._siteKey = this.siteKey;
+            }
         }
         this.setupComponent();
     };
-    BaseReCaptchaComponent.prototype.ngOnChanges = function (changes) {
-        if (this.isLoaded) {
-            this.setupComponent();
-        }
-    };
     BaseReCaptchaComponent.prototype.ngOnDestroy = function () {
         window[this.windowOnLoadCallbackProperty] = {};
-        window[this.globalCaptchaElemName] = {};
         window[this.globalReCaptchaProperty] = {};
     };
     /**
@@ -748,14 +787,12 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         }
         // assign captcha alem
         this.captchaElem = captchaElem;
-        // set global captcha elem
-        this.setGlobalCaptchaElem(this.captchaElem);
     };
     /**
      * Responsible for instantiating captcha element
     */
     BaseReCaptchaComponent.prototype.renderReCaptcha = function () {
-        this.captchaId = this.reCaptchaApi.render(this.getGlobalCaptchaElem(), this.getCaptchaProperties());
+        this.reCaptchaApi.render(this.captchaId, this.getCaptchaProperties());
         this.ready.next();
     };
     /**
@@ -797,7 +834,7 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         return "&hl=" + this.hl;
     };
     BaseReCaptchaComponent.prototype.getPseudoUniqueNumber = function () {
-        return new Date().getUTCMilliseconds();
+        return new Date().getUTCMilliseconds() + Math.floor(Math.random() * 9999);
     };
     /**
      * Checks if reCaptcha Api is defined. It may happen that when navigating from angular component to another
@@ -813,7 +850,7 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         var _this = this;
         // captcha specific setup
         this.captchaSpecificSetup();
-        // create captcha wrapper and set it to global namespace
+        // create captcha wrapper
         this.createAndSetCaptchaElem();
         // we need to patch the callback through global variable, otherwise callback is not accessible
         // note: https://github.com/Enngage/ngx-captcha/issues/2
@@ -836,31 +873,32 @@ var BaseReCaptchaComponent = /** @class */ (function () {
         this.load.next();
         // render captcha
         this.renderReCaptcha();
+        // setup component if it was flagges as such
+        if (this.setupAfterLoad) {
+            this.setupAfterLoad = false;
+            this.setupComponent();
+        }
     };
     BaseReCaptchaComponent.prototype.generateNewElemId = function () {
         return "ngx-captcha-id-" + this.getPseudoUniqueNumber();
     };
     BaseReCaptchaComponent.prototype.createAndSetCaptchaElem = function () {
-        // generate new elem id
-        this.captchaElemId = this.generateNewElemId();
-        if (!this.captchaElemId) {
+        if (!this.captchaId) {
             throw Error("Captcha elem Id is not set");
         }
         // remove old html
         this.captchaWrapperElem.nativeElement.innerHTML = '';
         // create new wrapper for captcha
         var newElem = this.renderer.createElement('div');
-        newElem.id = this.captchaElemId;
+        newElem.id = this.captchaId;
         this.renderer.appendChild(this.captchaWrapperElem.nativeElement, newElem);
         // update captcha elem
-        this.ensureCaptchaElem(this.captchaElemId);
+        this.ensureCaptchaElem(this.captchaId);
     };
-    BaseReCaptchaComponent.prototype.setGlobalCaptchaElem = function (elem) {
-        window[this.globalCaptchaElemName] = elem;
-    };
-    BaseReCaptchaComponent.prototype.getGlobalCaptchaElem = function () {
-        return window[this.globalCaptchaElemName];
-    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], BaseReCaptchaComponent.prototype, "siteKey", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", String)
@@ -942,11 +980,11 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 var InvisibleReCaptchaComponent = /** @class */ (function (_super) {
     __extends(InvisibleReCaptchaComponent, _super);
-    function InvisibleReCaptchaComponent(renderer, zone, config) {
-        var _this = _super.call(this, renderer, zone, _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_2__["ReCaptchaType"].InvisibleReCaptcha, config) || this;
+    function InvisibleReCaptchaComponent(renderer, zone, globalConfig) {
+        var _this = _super.call(this, renderer, zone, _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_2__["ReCaptchaType"].InvisibleReCaptcha, globalConfig) || this;
         _this.renderer = renderer;
         _this.zone = zone;
-        _this.config = config;
+        _this.globalConfig = globalConfig;
         /**
          * This size representing invisible captcha
          */
@@ -975,7 +1013,7 @@ var InvisibleReCaptchaComponent = /** @class */ (function (_super) {
     InvisibleReCaptchaComponent.prototype.getCaptchaProperties = function () {
         var _this = this;
         return {
-            'sitekey': this.siteKey,
+            'sitekey': this._siteKey,
             'callback': function (response) { return _this.zone.run(function () { return _this.handleCallback(response); }); },
             'badge': this.badge,
             'type': this.type,
@@ -1050,11 +1088,11 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 var ReCaptcha2Component = /** @class */ (function (_super) {
     __extends(ReCaptcha2Component, _super);
-    function ReCaptcha2Component(renderer, zone, config) {
-        var _this = _super.call(this, renderer, zone, _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_2__["ReCaptchaType"].ReCaptcha2, config) || this;
+    function ReCaptcha2Component(renderer, zone, globalConfig) {
+        var _this = _super.call(this, renderer, zone, _recaptcha_type_enum__WEBPACK_IMPORTED_MODULE_2__["ReCaptchaType"].ReCaptcha2, globalConfig) || this;
         _this.renderer = renderer;
         _this.zone = zone;
-        _this.config = config;
+        _this.globalConfig = globalConfig;
         /**
         * Name of the global expire callback
         */
@@ -1098,7 +1136,7 @@ var ReCaptcha2Component = /** @class */ (function (_super) {
     ReCaptcha2Component.prototype.getCaptchaProperties = function () {
         var _this = this;
         return {
-            'sitekey': this.siteKey,
+            'sitekey': this._siteKey,
             'callback': function (response) { return _this.zone.run(function () { return _this.handleCallback(response); }); },
             'expired-callback': function () { return _this.zone.run(function () { return _this.handleExpireCallback(); }); },
             'error-callback': function () { return _this.zone.run(function () { return _this.handleErrorCallback(); }); },
